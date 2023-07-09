@@ -22,69 +22,709 @@
 		<script src="assets/js/script.js" defer></script>
 	</head>
 
-	<body>
+	<body class="leading-relaxed tracking-wide">
 		<!-- Header -->
-		<header class="flex justify-between px-5 py-2 relative h-10">
+		<header class="w-full sticky z-50 shadow-md py-1 top-0 bg-gray-100">
 			<a
 				href="#main-content"
-				class="bg-sky-600 py-2 px-6 absolute left-2 -translate-y-12 transition-transform ease-in-out delay-300 focus:translate-y-0"
+				class="absolute translate-y-[-150%] transition-transform duration-300 ease-[ease-in-out] px-6 py-2 rounded-[0_0_0.25rem_0.25rem] left-2 bg-sky-500 text-white focus:translate-y-0"
 				>Skip to main content</a
 			>
 
-			<!-- Logo -->
-			<a href="#hero" class="logo">rui.pereira</a>
+			<div class="w-full container mx-auto flex flex-wrap items-center justify-between mt-0 px-2 py-2 lg:py-4">
+				<!-- Logo -->
+				<a href="#hero" class="pl-4 text-xl">rui.pereira</a>
 
-			<!-- Navigation -->
-			<nav
-				id="navbar"
-				class="absolute inset-x-0 shadow-md -top-full bg-white duration-500 border border-red-500">
-				<ul class="flex flex-col gap-2">
-					<li>
-						<a href="#sobre">.sobre()</a>
-					</li>
-					<li>
-						<a href="#formacao">.formacao()</a>
-					</li>
-					<li>
-						<a href="#experiencia">.experiencia()</a>
-					</li>
-					<li>
-						<a href="#projetos">.projetos()</a>
-					</li>
-					<li>
-						<a href="#contato">.contacto()</a>
-					</li>
-				</ul>
-			</nav>
+				<!-- hamburger button -->
+				<button
+					class="hamburger-btn z-50 border border-none cursor-pointer md:hidden"
+					aria-controls="primary-navigation"
+					aria-expanded="false">
+					<svg fill="inherit" class="hamburger" viewBox="0 0 100 100" width="35">
+						<rect class="line top" width="80" height="10" x="10" y="25" rx="5"></rect>
+						<rect class="line middle" width="80" height="10" x="10" y="45" rx="5"></rect>
+						<rect class="line bottom" width="80" height="10" x="10" y="65" rx="5"></rect>
+					</svg>
+				</button>
 
-			<!-- hamburger button -->
-			<button class="hamburger-btn" aria-controls="primary-navigation" aria-expanded="false">
-				<svg fill="bg-red-500" class="hamburger" viewBox="0 0 100 100" width="35">
-					<rect class="line top" width="80" height="10" x="10" y="25" rx="5"></rect>
-					<rect class="line middle" width="80" height="10" x="10" y="45" rx="5"></rect>
-					<rect class="line bottom" width="80" height="10" x="10" y="65" rx="5"></rect>
-				</svg>
-			</button>
+				<!-- Navigation -->
+				<nav
+					class="navbar absolute w-full grid grid-rows-[0fr] overflow-hidden md:w-auto text-blue-700 left-0 top-full bg-gray-100 shadow-md md:shadow-none md:relative md:inline-block md:bg-transparent md:px-4 md:py-0">
+					<ul class="nav-list min-h-0 flex flex-col items-center justify-end gap-2 md:flex-row md:gap-6">
+						<li class="nav-item">
+							<a class="nav-link" href="#sobre">.sobre()</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#projetos">.projetos()</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#formacao">.formacao()</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#experiencia">.experiencia()</a>
+						</li>
+
+						<li class="nav-item">
+							<a class="nav-link" href="#contacto">.contacto()</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</header>
 
-		<div class="">
-			<section id="sobre">
-				<div class="">
-					<h3 class="">div</h3>
-					<h1 class="">
-						<span class="">h1</span>
-						Rui Pereira
-						<span class="">h1</span>
+		<section id="hero">
+			<div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+				<div class="text-center px-3 lg:px-0">
+					<h1 class="uppercase my-4 text-2xl md:text-3xl lg:text-5xl font-black leading-tight">
+						Vamos Construir o Futuro Juntos!
 					</h1>
-					<h3 class="">
-						<span class="">h2</span>
-						Júnior Full-Stack developer
-						<span class="">h2</span>
-					</h3>
-					<h3 class="">div</h3>
+					<p class="leading-normal text-gray-800 text-base md:text-xl lg:text-2xl mb-8">
+						Seja uma startup que procura inovação ou uma empresa estabelecida que procura fortalecer
+						presença online, estou pronto para ajudar!
+					</p>
+
+					<a
+						href="#contacto"
+						class="mx-auto lg:mx-0 hover:underline font-extrabold my-2 md:my-6 py-4 px-8 shadow-lg w-48 inline-flex items-center mb-3 mr-1 text-base text-white no-underline align-middle bg-blue-600 border border-transparent border-solid rounded-md cursor-pointer select-none sm:mb-0 sm:w-auto hover:bg-blue-700 hover:border-blue-700 hover:text-white focus-within:bg-blue-700 focus-within:border-blue-700">
+						Contactar
+						<i class="fa-solid fa-envelope w-4 h-4 ml-2"></i>
+					</a>
 				</div>
-				<div></div>
-			</section>
-		</div>
+
+				<div class="flex items-center w-full mx-auto content-end">
+					<div class="browser-mockup flex flex-1 m-6 md:px-0 md:m-12 bg-slate-900 w-1/2 rounded shadow-xl">
+						<div class="p-8 xl:p-24 text-slate-200">
+							<div class="flex flex-col md:flex-row text-4xl space-x-0">
+								<div class="html open close">
+									h1
+									<span class="text-amber-600">id=</span>
+									<span class="text-lime-600">"name"</span>
+								</div>
+								<div class="font-bold pl-16 md:pl-0">Rui Pereira</div>
+								<div class="html slash close">h1</div>
+							</div>
+							<div class="flex flex-col md:flex-row text-3xl md:mt-8 space-x-0">
+								<div class="html open close">
+									h2
+									<span class="text-amber-600">id=</span>
+									<span class="text-lime-600">"stack"</span>
+								</div>
+								<div class="pl-16 md:pl-0">Júnior Full-Stack</div>
+								<div class="html slash close">h2</div>
+							</div>
+							<div class="text-gray-400 mt-8">// ToDo - connect to backend and fetch data</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="sobre">
+			<div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+				<div class="max-w-5xl mx-auto px-4 space-y-8">
+					<h2 class="text-3xl font-bold text-gray-800 text-center mb-4">Sobre Mim</h2>
+					<div class="flex flex-col md:flex-row space-y-8">
+						<div class="md:w-1/3">
+							<img
+								class="rounded-full w-48 h-48 mx-auto mb-4"
+								src="assets/img/comic-1.png"
+								alt="Foto de Perfil" />
+						</div>
+						<div class="md:w-2/3">
+							<p class="text-gray-700 leading-loose">
+								Olá! Sou o Rui Pereira, um desenvolvedor autodidata full-stack apaixonado com foco no
+								desenvolvimento de web-apps. Tenho alguma base em tecnologias front-end como HTML, CSS e
+								JavaScript, além de experiência com frameworks back-end como .net (blazor), php e react.
+							</p>
+							<p class="text-gray-700 leading-loose">
+								Sempre que me deparo com um problema que pode ser resolvido por meio de um programa ou
+								aplicativo, ou quando encontro oportunidades para melhorar o desempenho no trabalho,
+								procuro criar algo que facilite o meu trabalho ou o dos meus colegas.
+							</p>
+							<p class="text-gray-700 leading-loose">
+								Nos últimos anos, desenvolvi uma série de aplicações utilizando linguagens como PHP,
+								.NET e React para uso interno no meu ambiente de trabalho. Essas soluções ajudaram a
+								otimizar processos e aprimorar a eficiência das equipes com as quais trabalhei.
+							</p>
+							<p class="text-gray-700 leading-loose">
+								Este ano, concluí um curso de desenvolvimento full-stack, ampliando ainda mais meus
+								conhecimentos e habilidades técnicas. Agora, estou à procura de uma mudança de carreira
+								para seguir minha verdadeira paixão: programar.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="projetos">
+			<div class="max-w-screen-xl px-10 py-8 mx-auto space-y-12 md:space-y-28 lg:space-y-36 lg:py-24 lg:px-6">
+				<h2 class="text-4xl text-gray-800 text-center mb-10 font-extrabold">Projetos</h2>
+				<div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+					<div class="sm:text-lg">
+						<h2 class="mb-4 text-3xl tracking-tight font-bold">On job evaluation app</h2>
+						<p class="mb-8 font-light lg:text-xl">
+							Com o intuito de facilitar a avaliação de desempenho dos colaboradores, criei uma aplicação
+							que permite aos gestores avaliar os colaboradores de forma mais rápida e eficiente.
+						</p>
+
+						<ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7">
+							<h3 class="text-2xl tracking-tight font-bold">Stack</h3>
+
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/tailwind-css-2.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">Tailwind CSS</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/next-js.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">Next.js</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/postgresql.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">PostgreSql</span>
+							</li>
+						</ul>
+						<p class="mb-8 font-light lg:text-xl">
+							É apenas um esboço do que poderia ser uma aplicação completa, mas é um bom ponto de partida
+							para um projeto mais robusto.
+							<span class="text-sm flex mt-6">
+								Dados de login: <br />
+								User: RaPereira
+								<br />
+								Pass: test
+							</span>
+						</p>
+						<div class="flex space-x-4 mb-6 justify-end">
+							<div class="relative flex flex-col items-center group">
+								<a
+									href="https://github.com/RuiAAPereira/on-job-eval/tree/main"
+									target="_blank"
+									class="inline-flex items-center justify-center">
+									<i class="fa-brands fa-github text-2xl"></i>
+								</a>
+								<div class="absolute top-0 flex-col items-center hidden mt-6 group-hover:flex">
+									<div class="w-3 h-3 -mb-2 rotate-45 bg-black"></div>
+									<span
+										class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg"
+										>Código.</span
+									>
+								</div>
+							</div>
+							<div class="relative flex flex-col items-center group">
+								<a
+									href="https://on-job-eval.vercel.app/"
+									target="_blank"
+									class="inline-flex items-center justify-center">
+									<i class="fa-solid fa-desktop text-2xl"></i>
+								</a>
+								<div class="absolute top-0 flex-col items-center hidden mt-6 group-hover:flex">
+									<div class="w-3 h-3 -mb-2 rotate-45 bg-black"></div>
+									<span
+										class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg"
+										>Demo.</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						class="w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+						src="assets/img/projects/on-job.png"
+						alt="dashboard feature image" />
+				</div>
+
+				<div class="items-center gap-10 lg:grid lg:grid-cols-2 xl:gap-16">
+					<div class="sm:text-lg">
+						<h2 class="mb-4 text-3xl tracking-tight font-bold">Sistema de análize de dados</h2>
+						<p class="mb-8 font-light lg:text-xl">
+							<span class="font-bold">Problema:</span> Uma aplicação existente, não tem uma API e existe a
+							necessidade de analizar os dados existentes.
+						</p>
+						<ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7">
+							<h3 class="text-2xl tracking-tight font-bold">Stack</h3>
+
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/dot-net-core-7.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">.NET Core</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img src="assets/img/logos/blazor.svg" alt="tailwind logo" height="40px" width="40px" />
+								<span class="text-base font-medium leading-tight">Blazor</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/microsoft-sql-server-1.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">MS SQL Server</span>
+							</li>
+						</ul>
+						<p class="mb-8 font-light lg:text-xl">
+							<span class="font-bold">Solução:</span> Uma aplicação que importa os dados através de uma
+							folha excel, insere-os em base de dados e depois trabalha-os de modo a apresentar os
+							resultados.
+						</p>
+						<div class="flex space-x-4 mb-6 justify-end">
+							<div class="relative flex flex-col items-center group">
+								<a
+									href="https://github.com/RuiAAPereira/MyWayApp23"
+									target="_blank"
+									class="inline-flex items-center justify-center">
+									<i class="fa-brands fa-github text-2xl"></i>
+								</a>
+								<div class="absolute top-0 flex-col items-center hidden mt-6 group-hover:flex">
+									<div class="w-3 h-3 -mb-2 rotate-45 bg-black"></div>
+									<span
+										class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg"
+										>Código.</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						class="w-full mb-4 rounded-lg lg:mb-0 lg:flex lg:order-first"
+						src="assets/img/projects/myway2023.png"
+						alt="dashboard feature image" />
+				</div>
+
+				<div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+					<div class="sm:text-lg">
+						<h2 class="mb-4 text-3xl tracking-tight font-bold">Android App</h2>
+						<p class="mb-8 font-light lg:text-xl">
+							Uma pequena app android que calcula os materiais gastos para trabalhos manuais.
+						</p>
+
+						<ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7">
+							<h3 class="text-2xl tracking-tight font-bold">Stack</h3>
+
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/xamarin.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">Xamarin</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/dot-net-core-7.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">.NET Core</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img src="assets/img/logos/sqlite.svg" alt="tailwind logo" height="40px" width="40px" />
+								<span class="text-base font-medium leading-tight">SQlite</span>
+							</li>
+						</ul>
+						<p class="mb-8 font-light lg:text-xl">
+							Esta app foi apenas um conceito, apenas é usada em em casa ;D.
+						</p>
+						<div class="flex space-x-4 mb-6 justify-end">
+							<div class="relative flex flex-col items-center group">
+								<a
+									href="https://github.com/RuiAAPereira/MaisArte"
+									target="_blank"
+									class="inline-flex items-center justify-center">
+									<i class="fa-brands fa-github text-2xl"></i>
+								</a>
+								<div class="absolute top-0 flex-col items-center hidden mt-6 group-hover:flex">
+									<div class="w-3 h-3 -mb-2 rotate-45 bg-black"></div>
+									<span
+										class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg"
+										>Código.</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						class="w-full mb-4 rounded-lg lg:mb-0 lg:flex"
+						src="assets/img/projects/maisarte.png"
+						alt="dashboard feature image" />
+				</div>
+
+				<div class="items-center gap-8 lg:grid lg:grid-cols-2 xl:gap-16">
+					<div class="sm:text-lg">
+						<h2 class="mb-4 text-3xl tracking-tight font-bold">Web app para stand de carros</h2>
+						<p class="mb-8 font-light lg:text-xl">
+							Full-Stack web app para um stand de carros. com um backoffice para gerir os carros e um
+							frontoffice para os clientes verem os carros.
+						</p>
+
+						<ul role="list" class="pt-8 space-y-5 border-t border-gray-200 my-7">
+							<h3 class="text-2xl tracking-tight font-bold">Stack</h3>
+
+							<li class="flex space-x-3 items-center">
+								<img src="assets/img/logos/php-1.svg" alt="tailwind logo" height="40px" width="40px" />
+								<span class="text-base font-medium leading-tight">php</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/codeigniter.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">CodeIgniter</span>
+							</li>
+							<li class="flex space-x-3 items-center">
+								<img
+									src="assets/img/logos/mysql-6.svg"
+									alt="tailwind logo"
+									height="40px"
+									width="40px" />
+								<span class="text-base font-medium leading-tight">MySql</span>
+							</li>
+						</ul>
+						<div class="flex space-x-4 mb-6 justify-end">
+							<div class="relative flex flex-col items-center group">
+								<a
+									href="https://github.com/RuiAAPereira/scautomoveis"
+									target="_blank"
+									class="inline-flex items-center justify-center">
+									<i class="fa-brands fa-github text-2xl"></i>
+								</a>
+								<div class="absolute top-0 flex-col items-center hidden mt-6 group-hover:flex">
+									<div class="w-3 h-3 -mb-2 rotate-45 bg-black"></div>
+									<span
+										class="relative z-10 p-2 text-xs leading-none text-white whitespace-no-wrap bg-black shadow-lg"
+										>Código.</span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+					<img
+						class="w-full mb-4 rounded-lg lg:mb-0 lg:flex lg:order-first"
+						src="assets/img/projects/scautomoveis.png"
+						alt="dashboard feature image" />
+				</div>
+			</div>
+		</section>
+
+		<section id="formacao">
+			<div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+				<h2 class="text-3xl font-bold text-gray-800 text-center mb-10">Formação</h2>
+				<div class="-my-8 divide-y-2 divide-gray-100">
+					<div class="py-8 flex flex-wrap md:flex-nowrap">
+						<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+							<span class="font-semibold title-font text-gray-700">Lisboa, Portugal</span>
+							<span class="mt-1 text-sm">2022-2023</span>
+						</div>
+						<div class="md:flex-grow">
+							<h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+								Curso de Full-Stack Developer, Codemaster
+							</h2>
+							<p class="leading-relaxed">
+								Introdução à programação e lógica de programação; <br />
+								Lógica de Programação avançada; <br />
+								Código JAVA; PHP; JavaScript; CSS; <br />
+								Conecção e gestão de bases de dados; SQL; Bootstrap; <br />
+								Introdução aos frameworks mais importantes; <br />Criação de websites e Apps; <br />
+								Criação em continuo de pequenos projectos com as linguagens web ensinadas; <br />
+								Múltiplas questões associadas à criação de um projecto web: desde a criação de backend
+								até à criação do frontend; <br />
+								Criação de um projecto web final: frontend e backend.
+							</p>
+							<a
+								href="https://codemaster.pt"
+								target="_blank"
+								class="text-indigo-500 inline-flex items-center mt-4"
+								>codemaster.pt
+								<svg
+									class="w-4 h-4 ml-2"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2"
+									fill="none"
+									stroke-linecap="round"
+									stroke-linejoin="round">
+									<path d="M5 12h14"></path>
+									<path d="M12 5l7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="py-8 flex flex-wrap md:flex-nowrap">
+						<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+							<span class="font-semibold title-font text-gray-700">Londres, Reino Unido</span>
+							<span class="mt-1 text-sm">2020</span>
+						</div>
+						<div class="md:flex-grow">
+							<h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+								Professional skills for DGR instructors - Categories 1,2,3,6 IATA
+							</h2>
+							<p class="leading-relaxed">
+								Interpreting CBTA concepts, principles, benefits <br />
+								Understanding competency factors<br />
+								Recognizing stakeholders and their roles and responsibilities in CBTA<br />
+								Using a CBTA approach to develop, implement, and execute effective instructional and
+								assessment plans<br />
+								Understanding and applying adult learning principles<br />
+								Learning practical facilitation techniques<br />
+								Applying facilitation techniques for effective classroom management in face-to-face or
+								virtual environments<br />
+								Designing engaging visual or electronic aids required for the training unit<br />
+								Mastering communication and presentation skills<br />
+								Analyzing and evaluating feedback to ensure continuous improvement
+							</p>
+							<a
+								class="text-indigo-500 inline-flex items-center mt-4"
+								href="https://www.iata.org/training"
+								target="_blank"
+								>iata.org/training
+								<svg
+									class="w-4 h-4 ml-2"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2"
+									fill="none"
+									stroke-linecap="round"
+									stroke-linejoin="round">
+									<path d="M5 12h14"></path>
+									<path d="M12 5l7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+					<div class="py-8 flex flex-wrap md:flex-nowrap">
+						<div class="md:w-64 md:mb-0 mb-6 flex-shrink-0 flex flex-col">
+							<span class="font-semibold title-font text-gray-700">Lisboa, Portugal</span>
+							<span class="text-sm">2020</span>
+						</div>
+						<div class="md:flex-grow">
+							<h2 class="text-2xl font-medium text-gray-900 title-font mb-2">
+								Dangerous Goods Regulations (DGR) - Initial Category 6, portway, handling de portugal.
+							</h2>
+							<p class="leading-relaxed">
+								Com o objetivo de transmitir conhecimentos e desenvolver competências, para um
+								processamento eficiente e seguro de carga perigosa via aérea, incluindo, preparação,
+								tratamento, manuseamento, transporte, verificação e aceitação. <br />
+								Recebi conhecimentos e desenvolvi competências, relativamente aos procedimentos
+								aplicáveis ao transporte de mercadorias perigosas por via aérea, de acordo com a edição
+								atualizada do Dangerous Goods Regulatios da IATA.
+							</p>
+							<a class="text-indigo-500 inline-flex items-center mt-4"
+								>Learn More
+								<svg
+									class="w-4 h-4 ml-2"
+									viewBox="0 0 24 24"
+									stroke="currentColor"
+									stroke-width="2"
+									fill="none"
+									stroke-linecap="round"
+									stroke-linejoin="round">
+									<path d="M5 12h14"></path>
+									<path d="M12 5l7 7-7 7"></path>
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="experiencia">
+			<div class="max-w-screen-xl px-4 py-8 mx-auto space-y-12 lg:space-y-20 lg:py-24 lg:px-6">
+				<div class="grid gap-4 sm:grid-cols-12">
+					<div class="col-span-12 sm:col-span-3">
+						<div
+							class="text-center sm:text-left mb-14 before:block before:w-24 before:h-3 before:mb-5 before:rounded-md before:mx-auto sm:before:mx-0 before:bg-blue-600">
+							<h3 class="text-3xl font-semibold">Experiência Profissional</h3>
+							<span class="text-sm font-bold tracki uppercase text-gray-600">Curriculum</span>
+						</div>
+					</div>
+					<div class="relative col-span-12 px-4 space-y-6 sm:col-span-9">
+						<div
+							class="col-span-12 space-y-12 relative px-4 sm:col-span-8 sm:space-y-8 sm:before:absolute sm:before:top-2 sm:before:bottom-0 sm:before:w-0.5 sm:before:-left-3 before:bg-gray-300">
+							<div
+								class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-600">
+								<h3 class="text-xl font-semibold tracki">
+									Formador / Coordenador pedagógico, portway, handling de portugal.
+								</h3>
+								<time class="text-xs tracki uppercase text-gray-600"
+									>2019 - atualmente, Lisboa, Portugal</time
+								>
+								<p class="mt-3">
+									Acompanhar o projeto pedagógico "MyWay" e coordenar o planeamento do mesmo,
+									estabelecer relações entre os formadores que incluem o grupo nas diversas escalas e
+									incentivar a formação contínua dos formadores. Planear estratégias que possibilitem
+									a melhoria de resultados dos formandos. Avaliar e acompanhar o processo de ensino e
+									aprendizagem, assim como os resultados de desempenho dos formandos. Garantir e
+									estimular a participação dos formadores e formandos, garantindo um trabalho que seja
+									produtivo e motivador. Organizar e desenvolver os manuais necessários ao processo de
+									formação. Promover práticas inovadoras de ensino e incentivar a utilização de
+									tecnologias educacionais.
+								</p>
+							</div>
+							<div
+								class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-600">
+								<h3 class="text-xl font-semibold tracki">
+									Sub coordenador do serviço MyWay / formador BPMR / responsável assiduidade, portway,
+									handling de portugal.
+								</h3>
+								<time class="text-xs tracki uppercase text-gray-600"
+									>2018 - 2019, Lisboa, Portugal</time
+								>
+								<p class="mt-3">
+									Planear, supervisionar e coordenar as actividades do Serviço. Implementar processos
+									de melhoria do funcionamento do Serviço. Garantir a operacionalidade dos serviços,
+									através, por exemplo, do planeamento das escalas de trabalho, da verificação da
+									eficiência dos equipamentos, da gestão das assistências. Gerir escalas de trabalho,
+									turnos e folgas de acordo com as necessidades operacionais. Avaliar e melhorar as
+									competências individuais dos colaboradores, nomeadamente promovendo acções de
+									formação/refrescamento. Contactar e reunir, sempre que possível, com os Supervisores
+									e restante staff no sentido de procederem, em conjunto, à análise das situações
+									ocorridas durante as operações de assistência e à definição de procedimentos a
+									seguir perante as mesmas. Cumprir tarefas e responsabilidades definidas nos
+									documentos do SGQA (Sistema de Gestão da Qualidade e Ambiente) e regras de Safety e
+									Security. Marcação e realização das formações de BPMR, MyWay LIS e OPO. Elaboração
+									escalas de “on-job training” (apenas LIS). Controlo e correcção de assiduidade via
+									plataforma TEMPUS.
+								</p>
+							</div>
+							<div
+								class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-600">
+								<h3 class="text-xl font-semibold tracki">
+									Formador BPMR / responsável assiduidade MyWay e terminal de bagagem /
+									Administrativo, portway, handling de portugal.
+								</h3>
+								<time class="text-xs tracki uppercase text-gray-600"
+									>2017 - 2018, Lisboa, Portugal</time
+								>
+								<p class="mt-3">
+									Marcação e realização das formações de BPMR, MyWay LIS e OPO. Elaboração escalas de
+									“on-job training” (apenas LIS). EXPERIÊNCIA PROFISSIONAL Controlo e correcção de
+									assiduidade via plataforma TEMPUS. Apoio à coordenação Airport Support Serviçes.
+									Serviços administrativos, elaboração de escalas, lançamento de facturas.
+								</p>
+							</div>
+							<div
+								class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-600">
+								<h3 class="text-xl font-semibold tracki">
+									Supervisor MyWay, portway, handling de portugal.
+								</h3>
+								<time class="text-xs tracki uppercase text-gray-600"
+									>2008 - 2017, Lisboa, Portugal</time
+								>
+								<p class="mt-3">
+									Supervisionar o serviço de assistência a passageiros de mobilidade reduzida.
+									Controlo de assiduidade e faltas. Registo do serviço via sistema informático.
+									Avaliar prioridades e tomar decisões em conforme. Planeamento da operação. Efetuar
+									Vistorias. Distribuir o serviço pelos vários colaboradores. Relações públicas.
+									Refutar eventuais atrasos.
+								</p>
+							</div>
+							<div
+								class="flex flex-col sm:relative sm:before:absolute sm:before:top-2 sm:before:w-4 sm:before:h-4 sm:before:rounded-full sm:before:left-[-35px] sm:before:z-[1] before:bg-blue-600">
+								<h3 class="text-xl font-semibold tracki">
+									Operador de assistência em escala, portway, handling de portugal.
+								</h3>
+								<time class="text-xs tracki uppercase text-gray-600"
+									>2005 - 2018, Lisboa, Portugal</time
+								>
+								<p class="mt-3">
+									Passagem pelos departamentos de Carga, informática e bagagem até Maio de 2008 altura
+									em que comecei a desempenhar funções como Supervisor do serviço MyWay.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+				<a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+					<span class="ml-3 text-xl">Rui Pereira</span>
+				</a>
+				<p class="text-sm sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+					© 2023 Rui Pereira —
+					<a
+						href="https://github.com/RuiAAPereira"
+						class="text-gray-600 ml-1"
+						rel="noopener noreferrer"
+						target="_blank"
+						>@RuiAAPereira</a
+					>
+				</p>
+				<span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+					<a class="">
+						<svg
+							fill="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							class="w-5 h-5"
+							viewBox="0 0 24 24">
+							<path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+						</svg>
+					</a>
+					<a class="ml-3">
+						<svg
+							fill="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							class="w-5 h-5"
+							viewBox="0 0 24 24">
+							<path
+								d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+						</svg>
+					</a>
+					<a class="ml-3">
+						<svg
+							fill="none"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="2"
+							class="w-5 h-5"
+							viewBox="0 0 24 24">
+							<rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+							<path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+						</svg>
+					</a>
+					<a class="ml-3">
+						<svg
+							fill="currentColor"
+							stroke="currentColor"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							stroke-width="0"
+							class="w-5 h-5"
+							viewBox="0 0 24 24">
+							<path
+								stroke="none"
+								d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+							<circle cx="4" cy="4" r="2" stroke="none"></circle>
+						</svg>
+					</a>
+				</span>
+			</div>
+		</footer>
 	</body>
 </html>

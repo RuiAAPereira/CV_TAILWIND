@@ -7,23 +7,11 @@
 @layer base {
 	html {
 		font-family: "Inter", sans-serif;
+		scroll-behavior: smooth;
+		scroll-padding-top: var(--header-height, 5rem);
 	}
 
 	/* hamburger */
-	.hamburger-btn {
-		z-index: 1000;
-		background: transparent;
-		border: none;
-		border-radius: 0.5rem;
-		cursor: pointer;
-	}
-
-	@media screen and (min-width: 768px) {
-		.hamburger-btn {
-			display: none;
-		}
-	}
-
 	.hamburger-btn .line {
 		transition: y 300ms ease-in 300ms, rotate 300ms ease-in, opacity 0ms 300ms;
 		transform-origin: center;
@@ -47,5 +35,76 @@
 
 	.hamburger-btn[aria-expanded="true"] .bottom {
 		rotate: -45deg;
+	}
+
+	.navbar {
+		transition: grid-template-rows 300ms ease-in-out, padding-block 300ms ease-in-out;
+	}
+
+	.navbar.opened {
+		@apply grid-rows-[1fr] shadow-md;
+		padding-block: 1rem;
+	}
+
+	.nav-link {
+		@apply text-[1.1rem] font-medium transition-[color] duration-[0.3s] ease-[ease-in-out] relative scroll-mt-20 text-sky-500;
+	}
+
+	.nav-link.active,
+	.nav-link:hover,
+	.nav-link:focus {
+		@apply text-red-400;
+	}
+
+	.nav-link::after {
+		@apply content-[""] block h-[5px] absolute bottom-[-0.5rem] origin-left transition-transform duration-[250ms] ease-[ease-in-out] scale-x-0 scale-y-100 inset-x-0  bg-red-400;
+	}
+
+	.nav-link:hover::after,
+	.nav-link:focus::after {
+		@apply scale-100;
+	}
+
+	.browser-mockup {
+		border-top: 2em solid rgba(230, 230, 230, 0.7);
+		position: relative;
+		@apply h-auto md:h-[60vh];
+	}
+
+	.browser-mockup:before {
+		display: block;
+		position: absolute;
+		content: "";
+		top: -1.25em;
+		left: 1em;
+		width: 0.5em;
+		height: 0.5em;
+		border-radius: 50%;
+		background-color: #f44;
+		box-shadow: 0 0 0 2px #f44, 1.5em 0 0 2px #9b3, 3em 0 0 2px #fb5;
+	}
+
+	.browser-mockup > * {
+		display: block;
+	}
+
+	.html {
+		@apply text-red-500;
+	}
+
+	.html.open {
+		@apply before:content-['<'] before:text-sky-500;
+	}
+
+	.html.close {
+		@apply after:content-['>'] after:text-sky-500;
+	}
+
+	.html.slash {
+		@apply before:content-["</"] before:text-sky-500;
+	}
+
+	.html.slash-close {
+		@apply after:content-["/>"] after:text-sky-500;
 	}
 }
