@@ -22,26 +22,6 @@ hamburgerBtn.addEventListener("click", () => {
 	}
 });
 
-// observer
-const header = document.querySelector("header");
-const teste = document.querySelector(".teste");
-
-const options = {
-	rootmargin: "-100px 0px 0px 0px",
-};
-
-const observer = new IntersectionObserver(function (entries, observer) {
-	entries.forEach((entry) => {
-		if (!entry.isIntersecting) {
-			header.classList.add("nav-scrolled");
-		} else {
-			header.classList.remove("nav-scrolled");
-		}
-	});
-}, options);
-
-// observer.observe(teste);
-
 // Navbar
 const headerHeight = document.querySelector("header").offsetHeight;
 
@@ -68,21 +48,71 @@ navLinks.forEach((link) => {
 	});
 });
 
-var acc = document.getElementsByClassName("accordion");
-var i;
+// Theme switcher
+const sunIcon = document.querySelector(".sun");
+const moonIcon = document.querySelector(".moon");
 
-for (i = 0; i < acc.length; i++) {
-	acc[i].addEventListener("click", function () {
-		/* Toggle between adding and removing the "active" class,
-    to highlight the button that controls the panel */
-		this.classList.toggle("active");
+const userTheme = localStorage.getItem("theme");
+const systemTheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 
-		/* Toggle between hiding and showing the active panel */
-		var panel = this.nextElementSibling;
-		if (panel.style.display === "block") {
-			panel.style.display = "none";
-		} else {
-			panel.style.display = "block";
+const iconToggle = () => {
+	moonIcon.classList.toggle("hidden");
+	sunIcon.classList.toggle("hidden");
+};
+
+const themeCheck = () => {
+	if (userTheme === "dark" || (!userTheme && systemTheme)) {
+		document.documentElement.classList.add("dark");
+		moonIcon.classList.toggle("hidden");
+		return;
+	}
+	sunIcon.classList.toggle("hidden");
+};
+
+const themeSwitch = () => {
+	if (document.documentElement.classList.contains("dark")) {
+		document.documentElement.classList.remove("dark");
+		localStorage.setItem("theme", "light");
+		iconToggle();
+		return;
+	}
+	document.documentElement.classList.add("dark");
+	localStorage.setItem("theme", "dark");
+	iconToggle();
+};
+
+sunIcon.addEventListener("click", themeSwitch);
+moonIcon.addEventListener("click", themeSwitch);
+
+themeCheck();
+
+// observer
+const header = document.querySelector("header");
+
+//get all sections
+const sections = document.querySelectorAll("section");
+
+const options = {
+	rootMargin: "-20% 0px -80% 0px",
+};
+
+const observer = new IntersectionObserver(function (entries, observer) {
+	entries.forEach((entry) => {
+		if (entry.isIntersecting) {
+			navLinks.forEach((a) => {
+				a.classList.remove("active");
+			});
+
+			const id = entry.target.getAttribute("id");
+			const navLink = document.querySelector(`.nav-link[href="#${id}"]`);
+			if (navLink) {
+				navLink.classList.add("active");
+			}
 		}
 	});
-}
+}, options);
+
+//observe sections
+sections.forEach((section) => {
+	observer.observe(section);
+});

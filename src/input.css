@@ -2,11 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Yeseva+One&display=swap");
 
 @layer base {
 	html {
-		font-family: "Inter", sans-serif;
+		/* font-family: "Josefin Sans", sans-serif; */
+		/* font-family: "Yeseva One", cursive; */
 		scroll-behavior: smooth;
 		scroll-padding-top: var(--header-height, 5rem);
 	}
@@ -42,22 +43,22 @@
 	}
 
 	.navbar.opened {
-		@apply grid-rows-[1fr] shadow-md;
+		@apply grid-rows-[1fr];
 		padding-block: 1rem;
 	}
 
 	.nav-link {
-		@apply text-[1.1rem] font-medium transition-[color] duration-[0.3s] ease-[ease-in-out] relative scroll-mt-20 text-sky-500;
+		@apply text-[1.1rem] font-bold transition-[color] duration-[0.3s] ease-[ease-in-out] relative scroll-mt-20 text-primary text-lg;
 	}
 
 	.nav-link.active,
 	.nav-link:hover,
 	.nav-link:focus {
-		@apply text-red-400;
+		@apply text-accent;
 	}
 
 	.nav-link::after {
-		@apply content-[""] block h-[5px] absolute bottom-[-0.5rem] origin-left transition-transform duration-[250ms] ease-[ease-in-out] scale-x-0 scale-y-100 inset-x-0  bg-red-400;
+		@apply content-[""] block h-[5px] absolute bottom-[-0.5rem] origin-left transition-transform duration-[250ms] ease-[ease-in-out] scale-x-0 scale-y-100 inset-x-0  bg-accent;
 	}
 
 	.nav-link:hover::after,
@@ -66,7 +67,7 @@
 	}
 
 	.browser-mockup {
-		border-top: 2em solid rgba(230, 230, 230, 0.7);
+		border-top: 2em solid rgba(100, 100, 100, 0.7);
 		position: relative;
 		@apply h-auto md:h-[60vh];
 	}
@@ -89,22 +90,90 @@
 	}
 
 	.html {
-		@apply text-red-500;
+		@apply text-red;
 	}
 
 	.html.open {
-		@apply before:content-['<'] before:text-sky-500;
+		@apply before:content-['<'] before:text-primary;
 	}
 
 	.html.close {
-		@apply after:content-['>'] after:text-sky-500;
+		@apply after:content-['>'] after:text-primary;
 	}
 
 	.html.slash {
-		@apply before:content-["</"] before:text-sky-500;
+		@apply before:content-["</"] before:text-primary;
 	}
 
 	.html.slash-close {
-		@apply after:content-["/>"] after:text-sky-500;
+		@apply after:content-["/>"] after:text-primary;
+	}
+
+	.arrows {
+		width: 60px;
+		height: 72px;
+		position: absolute;
+		left: 50%;
+		margin-left: -30px;
+		bottom: 20px;
+	}
+
+	.arrows path {
+		stroke: #2994d1;
+		fill: transparent;
+		stroke-width: 1px;
+		animation: arrow 2s infinite;
+		-webkit-animation: arrow 2s infinite;
+	}
+
+	@keyframes arrow {
+		0% {
+			opacity: 0;
+		}
+		40% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	@-webkit-keyframes arrow /*Safari and Chrome*/ {
+		0% {
+			opacity: 0;
+		}
+		40% {
+			opacity: 1;
+		}
+		80% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+
+	.arrows path.a1 {
+		animation-delay: -1s;
+		-webkit-animation-delay: -1s; /* Safari 和 Chrome */
+	}
+
+	.arrows path.a2 {
+		animation-delay: -0.5s;
+		-webkit-animation-delay: -0.5s; /* Safari 和 Chrome */
+	}
+
+	.arrows path.a3 {
+		animation-delay: 0s;
+		-webkit-animation-delay: 0s; /* Safari 和 Chrome */
+	}
+
+	@media(prefers-reduced-motion) {
+		.animate-opacity-show {
+			animation: none;
+		}
 	}
 }
